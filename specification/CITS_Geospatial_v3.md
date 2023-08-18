@@ -47,7 +47,7 @@ that need to comply with general requirements. Examples of such Profiles
 for vector data (GML) and raster data (GeoTIFF) are provided in the
 Guideline that accompanies this document. An example of a Profile for
 GIS in its own guideline which also accompanies this document. Profiles
-for other geospatial records formats (like proprietary data, earth
+for other geospatial records formats (like proprietary data formats, earth
 observations, point clouds, oblique images, web services, etc.) are not
 proposed at this stage. They will be added later in cooperation with the
 geospatial community.
