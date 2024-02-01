@@ -1,13 +1,3 @@
-**Specification for the E-ARK Content Information Type Specification for
-digital geospatial data records archiving (CITS Geospatial)**
-
-*[A proper front page will be created for the publication occurring
-after implementation of review comments.]*
-
-# Preface
-
-*To be added from Common Preface https://github.com/DILCISBoard/spec-publisher/blob/master/res/md/common-intro.md*
-
 
 # Context
 
