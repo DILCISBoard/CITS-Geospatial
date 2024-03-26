@@ -1,0 +1,3 @@
+# Documentation requirements
+
+Geospatial records are rarely in a form that is sufficiently self-explanatory to be used and interpreted adequately by itself. Consequently, additional information describing context, structure, rendering and behaviour is required to enable the user to understand, interpret and reuse preserved geodata properly. This chapter describes the requirements for Documentation for geospatial datasets (where it is applicable). Ideally, a standardised machine-readable format is preferred. However, any other form of documentation of the System is always welcome. Standardised machine-readable formats should be placed within the representation. Other documentation should be placed within the package level Documentation folder.

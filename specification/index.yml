@@ -1,0 +1,192 @@
+---
+- name: context
+  type: markdown
+  path: context/index.md
+
+- name: requirements.structure
+  type: markdown
+  path: requirements/stucture/index.md
+
+- name: requirements.METS.package_reps
+  type: markdown
+  path: requirements/METS/package_reps/index.md
+
+- name: requirements.METS.package_reps
+  type: table
+  heading: "Table 2: Geospatial information package requirement"
+  requirements:
+    - GEO_1
+
+- name: requirements.METS.package
+  type: markdown
+  path: requirements/METS/package/index.md
+
+- name: requirements.METS.package
+  type: table
+  heading: "Table 3: Requirements for the information package"
+  requirements:
+    - GEO_2
+    - GEO_3
+    - GEO_4
+    - GEO_5
+    - GEO_6
+    - GEO_7
+
+- name: requirements.METS.representations
+  type: markdown
+  path: requirements/METS/representations/index.md
+
+- name: requirements.METS.representations
+  type: table
+  heading: "Table 4: Requirements for the representation information package"
+  requirements:
+    - GEO_8
+    - GEO_9
+    - GEO_10
+
+- name: requirements.data
+  type: markdown
+  path: requirements/data/index.md
+
+- name: requirements.data.geo
+  type: markdown
+  path: requirements/data/geo/index.md
+
+- name: requirements.data.geo
+  type: table
+  heading: "Table 5: General requirements for the content data object"
+  requirements:
+    - GEO_11
+    - GEO_12
+    - GEO_13
+    - GEO_14
+    - GEO_15
+    - GEO_16
+    - GEO_17
+
+- name: requirements.data.vector
+  type: markdown
+  path: requirements/data/vector/index.md
+
+- name: requirements.data.geo
+  type: table
+  heading: "Table 6: Requirements for vector geodata"
+  requirements:
+    - GEO_18
+    - GEO_19
+    - GEO_20
+
+- name: requirements.data.raster
+  type: markdown
+  path: requirements/data/raster/index.md
+
+- name: requirements.data.raster
+  type: table
+  heading: "Table 7: Requirements for raster geospatial records"
+  requirements:
+    - GEO_21
+    - GEO_22
+    - GEO_23
+
+- name: requirements.data.other
+  type: markdown
+  path: requirements/data/other/index.md
+
+- name: requirements.documentation
+  type: markdown
+  path: requirements/documentation/index.md
+
+- name: requirements.documentation
+  type: table
+  heading: "Table 8: Requirement for documentation"
+  requirements:
+    - GEO_24
+    - GEO_25
+
+- name: requirements.documentation.structure
+  type: markdown
+  path: requirements/documentation/structure/index.md
+
+- name: requirements.documentation.structure
+  type: table
+  heading: "Table 9: Requirements describing structure"
+  requirements:
+    - GEO_26
+    - GEO_27
+    - GEO_27a
+    - GEO_28
+    - GEO_29
+    - GEO_29a
+    - GEO_29b
+    - GEO_30
+
+- name: requirements.documentation.rendering
+  type: markdown
+  path: requirements/documentation/rendering/index.md
+- name: requirements.documentation.rendering
+  type: table
+  heading: "Table 10: Requirement for rendition and visualisation"
+  requirements:
+    - GEO_31
+    - GEO_32
+    - GEO_32a
+    - GEO_33
+    - GEO_33a
+    - GEO_34
+    - GEO_34a
+
+- name: requirements.documentation.behaviour
+  type: markdown
+  path: requirements/documentation/behaviour/index.md
+- name: requirements.documentation.behaviour
+  type: table
+  heading: "Table 11: Requirements for behaviour"
+  requirements:
+    - GEO_35
+    - GEO_35a
+    - GEO_36
+    - GEO_36a
+    - GEO_37
+    - GEO_37a
+
+- name: requirements.documentation.coordinates
+  type: markdown
+  path: requirements/documentation/coordinates/index.md
+- name: requirements.documentation.coordinates
+  type: table
+  heading: "Table 12: Requirements for the coordinate reference system information"
+  requirements:
+    - GEO_38
+    - GEO_38a
+    - GEO_39
+    - GEO_39a
+
+- name: requirements.documentation.contextual
+  type: markdown
+  path: requirements/documentation/contextual/index.md
+- name: requirements.documentation.contextual
+  type: table
+  heading: "Table 13: Requirements regarding other information"
+  requirements:
+    - GEO_40
+    - GEO_41
+
+- name: requirements.metadata
+  type: markdown
+  path: requirements/metadata/index.md
+- name: requirements.metadata
+  type: table
+  heading: "Table 14: Requirements for the geospatial metadata"
+  requirements:
+    - GEO_42
+    - GEO_42a
+    - GEO_42b
+    - GEO_43
+    
+- name: postface
+  type: markdown
+  path: postface/index.md
+
+- name: appendices.glossary
+  type: markdown
+  path: appendices/glossary/index.md
