@@ -2,7 +2,7 @@
 preface:
   - name: introduction
     type: markdown
-    path: spec-publisher/context/index.md
+    path: spec-publisher/res/md/common-intro.md
 
   - name: context
     type: markdown
