@@ -1,5 +1,9 @@
 ---
 preface:
+  - name: introduction
+    type: markdown
+    path: spec-publisher/context/index.md
+
   - name: context
     type: markdown
     path: specification/context/index.md
