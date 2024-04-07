@@ -10,4 +10,3 @@ abstract: |
         records and resources to and from archives.
 version: ${RELEASE_VERSION}
 date: ${RELEASE_DATE}
----
