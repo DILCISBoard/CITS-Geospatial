@@ -2,7 +2,7 @@
   href: "/"
 
 - title: "PDF"
-  href: "/pdf/eark-csip.pdf"
+  href: "/pdf/eark-geo.pdf"
 
 - title: "Profile"
   href: "/profile/"
@@ -10,17 +10,12 @@
 - title: "Archive"
   href: "/archive/"
 
-- title: "Examples"
-  href: "/examples/"
-
 - title: "About"
   href: "/"
   subcategories:
-    - subtitle: "Release Notes"
-      subextref: "/release-notes/"
     - subtitle: "DILCIS"
       subextref: "https://dilcis.eu/"
     - subtitle: "On GitHub"
-      subextref: "https://github.com/DILCISBoard/E-ARK-CSIP"
+      subextref: "https://github.com/DILCISBoard/CITS-GEOSPATIAL"
     - subtitle: "Download"
-      subextref: "https://github.com/DILCISBoard/E-ARK-CSIP/archive/master.zip"
+      subextref: "https://github.com/DILCISBoard/CITS-GEOSPATIAL/archive/master.zip"

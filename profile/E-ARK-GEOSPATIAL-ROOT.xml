@@ -213,7 +213,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">There MUST be a minimum of one mets/fileSec/fileGrp[@USE='Representations']/@csip:CONTENTINFORMATIONTYPE with the value “citsgeospatial_v3_0” as taken from the CSIP Vocabulary for Detailed Content Type that direct to the representation METS.xml in the representation folder containing geospatial data.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The value of the attribute `mets/fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE` is set to "citsgeospatial_v3_0".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@USE='Representations']/@csip:CONTENTINFORMATIONTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrpUSERepresentations/csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
                         <dt>REF:CSIPv2.0.4</dt><dd>https://earkcsip.dilcis.eu/#CSIP62</dd>
                     </dl>
@@ -226,7 +226,7 @@
                     <head>Representation division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">There must be a discrete representation `div` element for each representation.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[LABELCSIP]/div/div</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
                         <dt>REF:CSIPv2.0.4</dt><dd>https://earkcsip.dilcis.eu/#CSIP105</dd>
                         <dt>REF:CSIPv2.0.4</dt><dd>https://earkcsip.dilcis.eu/#CSIP106</dd>
