@@ -33,14 +33,6 @@ cp -rf profile site/
 cp -rf archived site/archive
 cp -rf specification/media site/
 
-if [ -d site/pdf ]
-then
-  echo " - Removing old site PDF directory"
-  rm -rf site/pdf
-fi
-mkdir site/pdf
-cp -rf doc/pdf/eark-geo.pdf site/pdf/
-
 if [ -d _site ]
 then
   echo " - Removing old site directory"

@@ -12,7 +12,7 @@ echo " - PANDOC: Generating Preface from markdown"
 pandoc  --from gfm \
         --to latex \
         --metadata-file "$SCRIPT_DIR/spec-publisher/pandoc/metadata.yaml" \
-        "$SCRIPT_DIR/spec-publisher/res/md/common-intro.md" \
+        "./preface.md" \
         -o "./preface.tex"
 sed -i 's%section{%section*{%' ./preface.tex
 
@@ -35,6 +35,13 @@ markdown-pp PDF.md -o eark-geo-pdf.md -e tableofcontents
 sed -i 's%fig_2_csip_scope.svg%fig_2_csip_scope.png%' eark-geo-pdf.md
 
 
+if [ -d "$SCRIPT_DIR/site/pdf" ]
+then
+  echo " - Removing old site PDF directory"
+  rm -rf "$SCRIPT_DIR/site/pdf"
+fi
+mkdir "$SCRIPT_DIR/site/pdf"
+
 echo " - PANDOC: Generating PDF document from markdown and Tex sources"
 pandoc  --from markdown \
         --template "$SCRIPT_DIR/spec-publisher/pandoc/templates/eisvogel.latex" \
@@ -45,6 +52,6 @@ pandoc  --from markdown \
         --include-after-body "./postface.tex" \
         --number-sections \
         eark-geo-pdf.md \
-        -o ""$SCRIPT_DIR"/site/pdf/eark-geo.pdf"
+        -o "$SCRIPT_DIR/site/pdf/eark-geo.pdf"
 
 echo " - Finished"
