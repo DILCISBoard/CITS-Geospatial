@@ -38,4 +38,3 @@ then
   echo " - Removing old site directory"
   rm -rf _site
 fi
-mkdir _site
