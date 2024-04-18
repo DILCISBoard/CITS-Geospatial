@@ -75,7 +75,7 @@ jobs:
           templates: "metadata.yaml"
       - name: Run site build script
         run: |
-          ./create-site.sh
+          ./create_site.sh
       - name: Run Docker job for PDF publication
         run: |
           docker run --rm -v "$PWD:/source" --entrypoint /source/create-pdf.sh eark4all/spec-pdf-publisher
