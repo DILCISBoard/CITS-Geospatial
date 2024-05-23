@@ -145,19 +145,7 @@
     </controlled_vocabularies>
     <structural_requirements>
         <metsRootElement ID="metsRootElement">
-            <requirement ID="GEO_10" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1">
-                <description>
-                    <head>METS Profile</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The value is set to "https://citsgeospatial.dilcis.eu/profile/E-ARK-GEOSPATIAL-REPRESENTATION.xml".</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/@PROFILE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                        <dt>REF:CSIPv2.0.4</dt><dd>https://earkcsip.dilcis.eu/#SIP6</dd>
-                        <dt>REF:SIPv2.0.4</dt><dd>https://earksip.dilcis.eu/#SIP2</dd>
-                    </dl>
-                </description>
-            </requirement>
-            <requirement ID="GEO_8" REQLEVEL="MUST" RELATEDMAT="VocabularyContentCategory" EXAMPLES="metsRootElementExample1">
+             <requirement ID="GEO_8" REQLEVEL="MUST" RELATEDMAT="VocabularyContentCategory" EXAMPLES="metsRootElementExample1">
                 <description>
                     <head>Content Category</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The `mets/@TYPE` attribute is set to the value "Geospatial Data".</p>
@@ -176,6 +164,18 @@
                         <dt>METS XPath</dt><dd>mets/@csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                         <dt>REF:CSIPv2.0.4</dt><dd>https://earkcsip.dilcis.eu/#CSIP4</dd>
+                    </dl>
+                </description>
+            </requirement>
+			           <requirement ID="GEO_10" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1">
+                <description>
+                    <head>METS Profile</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The value is set to "https://citsgeospatial.dilcis.eu/profile/E-ARK-GEOSPATIAL-REPRESENTATION.xml".</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>mets/@PROFILE</dd>
+                        <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>REF:CSIPv2.0.4</dt><dd>https://earkcsip.dilcis.eu/#SIP6</dd>
+                        <dt>REF:SIPv2.0.4</dt><dd>https://earksip.dilcis.eu/#SIP2</dd>
                     </dl>
                 </description>
             </requirement>
@@ -224,7 +224,7 @@
                 </description>
             </requirement>
         </amdSec>
-        <structLink ID="structLinkElement">
+          <structLink ID="structLinkElement">
            <requirement REQLEVEL="MAY" ID="REF_METS_1">
                <description>
                    <head>structLink</head>
@@ -258,15 +258,6 @@
                 <description>
                     <head>Subfolders in data representations/[RepresentationName]/data</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If there are more geospatial records in a representation, each geospatial file MAY be placed or grouped in subfolders in representations/[RepresentationName]/data</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>Cardinality</dt><dd>0..n</dd>
-                    </dl>
-                </description>
-            </requirement>
-            <requirement ID="GEO_13" REQLEVEL="SHOULD">
-                <description>
-                    <head>Long term preservation format representation</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The Information Package SHOULD contain at least one representation of geospatial record in a long-term preservation format, as defined by the Archive or in the Long-term Preservation Format Profile</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
@@ -356,10 +347,30 @@
                     </dl>
                 </description>
             </requirement>
+            <requirement ID="GEO_27" REQLEVEL="SHOULD">
+                <description>
+                    <head>Standardised machine-readable Feature Catalogue</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A standardised machine-readable feature catalogue SHOULD be provided in the Information Package</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                        <dt>REF:ISO19110</dt><dd>https://www.iso.org/standard/57303.html</dd>
+                        <dt>REF:ISO19115-3</dt><dd>https://www.iso.org/standard/32579.html</dd>
+                    </dl>
+                </description>
+            </requirement>
             <requirement ID="GEO_27a" REQLEVEL="SHOULD" RELATEDMAT="GEO_27">
                 <description>
                     <head>Placement of Standardised machine-readable Feature Catalogue</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If a standardised machine-readable feature catalogue exits it SHOULD be placed in representations/[RepresentationName]/documentation/structure</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_29b" REQLEVEL="SHOULD" RELATEDMAT="GEO_29">
+                <description>
+                    <head>Placement of machine-readable logical model</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If a standardised machine-readable version of a document describing the logical model exists it SHOULD be provided in representations/[RepresentationName]/documentation/structure</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
@@ -383,6 +394,23 @@
                     </dl>
                 </description>
             </requirement>
+            <requirement ID="GEO_37" REQLEVEL="MAY">
+                <description>
+                    <head>Common queries, algorithms machine-readable</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Code of queries and algorithms used with the geospatial records in the Information Package MAY be provided in the Information Package</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_37a" REQLEVEL="SHOULD" RELATEDMAT="GEO_37">
+                <description>
+                    <head>Placement of machine-readable common queries, algorithms</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If code of queries and algorithms used with the geospatial records exists it SHOULD be provided in a documentation/behaviour folder</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
             <requirement ID="GEO_38" REQLEVEL="SHOULD" RELATEDMAT="GEO_15">
                 <description>
                     <head>Standardised machine-readable format CRS definition</head>
@@ -392,7 +420,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="GEO_38a" REQLEVEL="SHOULD" RELATEDMAT="GEO_38">
+            </requirement><requirement ID="GEO_38a" REQLEVEL="SHOULD" RELATEDMAT="GEO_38">
                 <description>
                     <head>Placement of standardised machine-readable format CRS definition</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If a standardised machine-readable format CRS definition exists it SHOULD be provided in a documentation/CRS folder</p>
@@ -401,24 +429,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="GEO_39" REQLEVEL="MAY">
-                <description>
-                    <head>CRS transformation parameters</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">For system using data in multiple CRS systems, standardised machine-readable transformation parameters between those CRS MAY be provided in the Information Package</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>Cardinality</dt><dd>0..n</dd>
-                    </dl>
-                </description>
-            </requirement>
-            <requirement ID="GEO_39a" REQLEVEL="SHOULD" RELATEDMAT="GEO_39">
-                <description>
-                    <head>Placement of CRS transformation parameters</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">If standardised machine-readable transformation parameters exists, they SHOULD be provided in a documentation/CRS folder</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>Cardinality</dt><dd>0..n</dd>
-                    </dl>
-                </description>
-            </requirement>
+          
             <requirement ID="GEO_41" REQLEVEL="SHOULD">
                 <description>
                     <head>Representation level contextual documentation</head>
@@ -445,14 +456,13 @@
                         <dt>Cardinality</dt><dd>Conditional 1..n</dd>
                     </dl>
                 </description>
-            </requirement>
-            <requirement ID="GEO_42b" REQLEVEL="MUST" RELATEDMAT="GEO_42">
+            </requirement>     
+            <requirement ID="GEO_43" REQLEVEL="MAY" RELATEDMAT="GEO_17">
                 <description>
-                    <head>XML schema definition for geospatial metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">If a standardised descriptive geospatial metadata file exits it MUST be accompanied by an XML schema definition placed in a sub-folder called /schemas within the Information Package root folder or the representation folder</p>
+                    <head>Non-standardised machine-readable Geospatial metadata</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A copy of Geospatial metadata in non-long-term preservation representations MAY be stored in its original form as databases or documentation. However, , if this data is stored in a long-term preservation representation, the formats need to comply with the archival guidelines (stored in approved long-term preservation formats).</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>Cardinality</dt><dd>Conditional 1..n</dd>
-                        <dt>REF:GEOSPATIALv3.0.0</dt><dd>GEOSTR1</dd>
+                        <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
             </requirement>
