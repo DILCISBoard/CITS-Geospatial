@@ -1,37 +1,36 @@
 ---
 preface:
   - name: introduction
-    type: markdown
-    path: spec-publisher/res/md/common-intro.md
-
-  - name: context
-    type: markdown
-    path: specification/context/index.md
+    type: file
+    source: spec-publisher/res/md/common-intro.md
 
 body:
+
+  - name: context
+    type: file
+    source: specification/context/index.md
+
   - name: requirements.structure
-    type: markdown
-    path: specification/requirements/structure/index.md
+    type: file
+    source: specification/requirements/structure/index.md
 
   - name: requirements.METS.package_reps
-    type: markdown
-    path: specification/requirements/METS/package_reps/index.md
+    type: file
+    source: specification/requirements/METS/package_reps/index.md
 
   - name: requirements.METS.package_reps
-    type: table
+    type: requirements
     heading: "Table 2: Geospatial information package requirement"
-    path: specification/requirements/METS/package_reps/requirements.md
     requirements:
       - GEO_1
 
   - name: requirements.METS.package
-    type: markdown
-    path: specification/requirements/METS/package/index.md
+    type: file
+    source: specification/requirements/METS/package/index.md
 
   - name: requirements.METS.package
-    type: table
+    type: requirements
     heading: "Table 3: Requirements for the information package"
-    path: specification/requirements/METS/package/requirements.md
     requirements:
       - GEO_2
       - GEO_3
@@ -41,30 +40,28 @@ body:
       - GEO_7
 
   - name: requirements.METS.representations
-    type: markdown
-    path: specification/requirements/METS/representations/index.md
+    type: file
+    source: specification/requirements/METS/representations/index.md
 
   - name: requirements.METS.representations
-    type: table
+    type: requirements
     heading: "Table 4: Requirements for the representation information package"
-    path: specification/requirements/METS/representations/requirements.md
     requirements:
       - GEO_8
       - GEO_9
       - GEO_10
 
   - name: requirements.data
-    type: markdown
-    path: specification/requirements/data/index.md
+    type: file
+    source: specification/requirements/data/index.md
 
   - name: requirements.data.geo
-    type: markdown
-    path: specification/requirements/data/geo/index.md
+    type: file
+    source: specification/requirements/data/geo/index.md
 
   - name: requirements.data.geo
-    type: table
+    type: requirements
     heading: "Table 5: General requirements for the content data object"
-    path: specification/requirements/data/geo/requirements.md
     requirements:
       - GEO_11
       - GEO_12
@@ -75,55 +72,51 @@ body:
       - GEO_17
 
   - name: requirements.data.vector
-    type: markdown
-    path: specification/requirements/data/vector/index.md
+    type: file
+    source: specification/requirements/data/vector/index.md
 
   - name: requirements.data.vector
-    type: table
+    type: requirements
     heading: "Table 6: Requirements for vector geodata"
-    path: specification/requirements/data/vector/requirements.md
     requirements:
       - GEO_18
       - GEO_19
       - GEO_20
 
   - name: requirements.data.raster
-    type: markdown
-    path: specification/requirements/data/raster/index.md
+    type: file
+    source: specification/requirements/data/raster/index.md
 
   - name: requirements.data.raster
-    type: table
+    type: requirements
     heading: "Table 7: Requirements for raster geospatial records"
-    path: specification/requirements/data/raster/requirements.md
     requirements:
       - GEO_21
       - GEO_22
       - GEO_23
 
   - name: requirements.data.other
-    type: markdown
-    path: specification/requirements/data/other/index.md
+    type: file
+    source: specification/requirements/data/other/index.md
 
   - name: requirements.documentation
-    type: markdown
-    path: specification/requirements/documentation/index.md
+    type: file
+    source: specification/requirements/documentation/index.md
 
   - name: requirements.documentation
-    type: table
+    type: requirements
     heading: "Table 8: Requirement for documentation"
-    path: specification/requirements/documentation/requirements.md
     requirements:
       - GEO_24
       - GEO_25
 
   - name: requirements.documentation.structure
-    type: markdown
-    path: specification/requirements/documentation/structure/index.md
+    type: file
+    source: specification/requirements/documentation/structure/index.md
 
   - name: requirements.documentation.structure
-    type: table
+    type: requirements
     heading: "Table 9: Requirements describing structure"
-    path: specification/requirements/documentation/structure/requirements.md
     requirements:
       - GEO_26
       - GEO_27
@@ -135,13 +128,12 @@ body:
       - GEO_30
 
   - name: requirements.documentation.rendering
-    type: markdown
-    path: specification/requirements/documentation/rendering/index.md
+    type: file
+    source: specification/requirements/documentation/rendering/index.md
 
   - name: requirements.documentation.rendering
-    type: table
+    type: requirements
     heading: "Table 10: Requirement for rendition and visualisation"
-    path: specification/requirements/documentation/rendering/requirements.md
     requirements:
       - GEO_31
       - GEO_32
@@ -152,13 +144,12 @@ body:
       - GEO_34a
 
   - name: requirements.documentation.behaviour
-    type: markdown
-    path: specification/requirements/documentation/behaviour/index.md
+    type: file
+    source: specification/requirements/documentation/behaviour/index.md
 
   - name: requirements.documentation.behaviour
-    type: table
+    type: requirements
     heading: "Table 11: Requirements for behaviour"
-    path: specification/requirements/documentation/behaviour/requirements.md
     requirements:
       - GEO_35
       - GEO_35a
@@ -168,13 +159,12 @@ body:
       - GEO_37a
 
   - name: requirements.documentation.coordinates
-    type: markdown
-    path: specification/requirements/documentation/coordinates/index.md
+    type: file
+    source: specification/requirements/documentation/coordinates/index.md
 
   - name: requirements.documentation.coordinates
-    type: table
+    type: requirements
     heading: "Table 12: Requirements for the coordinate reference system information"
-    path: specification/requirements/documentation/coordinates/requirements.md
     requirements:
       - GEO_38
       - GEO_38a
@@ -182,23 +172,22 @@ body:
       - GEO_39a
 
   - name: requirements.documentation.contextual
-    type: markdown
-    path: specification/requirements/documentation/contextual/index.md
+    type: file
+    source: specification/requirements/documentation/contextual/index.md
 
   - name: requirements.documentation.contextual
-    type: table
+    type: requirements
     heading: "Table 13: Requirements regarding other information"
-    path: specification/requirements/documentation/contextual/requirements.md
     requirements:
       - GEO_40
       - GEO_41
 
   - name: requirements.metadata
-    type: markdown
-    path: specification/requirements/metadata/index.md
+    type: file
+    source: specification/requirements/metadata/index.md
+
   - name: requirements.metadata
-    type: table
-    path: specification/requirements/metadata/requirements.md
+    type: requirements
     heading: "Table 14: Requirements for the geospatial metadata"
     requirements:
       - GEO_42
@@ -206,13 +195,37 @@ body:
       - GEO_42b
       - GEO_43
 
-appendices:    
-  - name: appendices.glossary
-    type: markdown
-    path: specification/appendices/glossary/index.md
+  - name: glossary
+    type: file
+    source: specification/appendices/glossary/index.md
+
+appendices:
+  - name: mets.examples
+    heading: "E-ARK Information Package METS Examples"
+    label: "A"
+    type: mets
+    section: Appendix
+
+  - name: mets.schema
+    heading: "External Schema"
+    label: "B"
+    type: mets
+    section: external_schema
+
+  - name: mets.vocabs
+    heading: "External Vocabularies"
+    label: "C"
+    type: mets
+    section: vocabulary
+
+  - name: mets.metadata.requirments
+    heading: "E-ARK CITS-Geospatial Metadata Requirements"
+    label: "E"
+    type: mets
+    section: requirements
 
 postface:
   - name: postface
-    type: markdown
-    path: specification/postface/index.md
+    type: file
+    source: specification/postface/index.md
 

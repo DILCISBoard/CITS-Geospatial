@@ -1,6 +1,4 @@
-# Appendices
-
-## Appendix A - Glossary
+# Glossary
 
 | Term | Description |
 |------|-------------|

@@ -10,7 +10,7 @@ cp -rf spec-publisher/site/* site/
 echo " - Generating main site specification and PDF markdown..."
 
 mvn clean package -f spec-publisher/pom.xml
-java -jar ./spec-publisher/target/mets-profile-processor-0.1.0-SNAPSHOT.jar -f ./index.yaml -o doc/site profile/E-ARK-GEOSPATIAL-REPRESENTATION.xml profile/E-ARK-GEOSPATIAL-ROOT.xml
+java -jar ./spec-publisher/target/mets-profile-processor-0.1.0-SNAPSHOT.jar -f ./specification.yaml -o doc/site profile/E-ARK-GEOSPATIAL-REPRESENTATION.xml profile/E-ARK-GEOSPATIAL-ROOT.xml
 
 echo " - MARKDOWN-PP: generating site page with TOC..."
 cd doc/site || exit
@@ -35,6 +35,6 @@ cp -rf specification/media site/
 
 if [ -d _site ]
 then
-  echo " - Removing old site directory"
-  rm -rf _site
+  echo " - Removing old site directory collatoral"
+  rm -rf _site/*
 fi

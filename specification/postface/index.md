@@ -16,11 +16,12 @@
 | Jaime Kaminski   | Highbury R&D                  |
 | Karin Bredenberg | Kommunalförbundet Sydarkivera |
 
-|---------|-------------------------------------------------------|--------|
-| **Project co-funded by the European Commission within the ICT Policy Support Programme** | |
-| **Dissemination Level** | |
-| **P** | **Public**     | X |
-| **C** | **Confidential, only for members of the Consortium and the Commission Services** | |
+## Project co-funded by the European Commission within the ICT Policy Support Programme
+
+| **Dissemination Level** |   |
+|-------------------------|---|
+|  **Public**     | X |
+| **Confidential, only for members of the Consortium and the Commission Services** |   |
 
 ## REVISION HISTORY AND STATEMENT OF ORIGINALITY
 
