@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Draft of E-ARK eHealth METS Profile 1.0 -->
+<METS_Profile
+    xmlns="http://www.loc.gov/METS_Profile/v2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mets="http://www.loc.gov/METS/"
+    xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+    xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.loc.gov/METS_Profile/v2 http://www.loc.gov/standards/mets/profile_docs/mets.profile.v2-0.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd"
+    STATUS="provisional"
+    REGISTRATION="unregistered"
+    ID="GEOSPATIALREPRESENTATIONV3.0.0">
+    <URI LOCTYPE="URL" ASSIGNEDBY="local">https://citsgeospatial.dilcis.eu/profile/E-ARK-GEOSPATIAL-REPRESENTATION.xml</URI>
+    <title>E-ARK GEospatial representation METS Profile 1.0 (citsgeospatial_v3_0)</title>
+    <abstract>This is the profile for an representation METS following the specification for the E-ARK Content Information Type Specification for digital geospatial data records archiving (CITS Geospatial). Its an extension of the E-ARK SIP profile which in its turn extends the CSIP and SIP profile.</abstract>
+    <date>2021-06-04T12:00:00</date>
+    <contact>
+        <institution>DILCIS Board</institution>
+        <address>http://dilcis.eu/</address>
+        <email>info@dilcis.eu</email>
+    </contact>
+    <related_profile RELATIONSHIP="Extends" URI="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml">E-ARK SIP METS Profile 2.0.4</related_profile>
+    <profile_context>
+        <resource_model>
+          <head>E-ARK GEOSPTIAL REPRESENTATION profile</head>
+            <p xmlns="http://www.w3.org/1999/xhtml">This profile together with the E-ARK CITS GEOSPATIAL document describes the representation METS document for an IP conforming to the E-ARK CITS GEospatial.</p>
+        </resource_model>
+    </profile_context>
+    <external_schema>
+        <name>E-ARK SIP METS Extension</name>
+            <URL>https://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd</URL>
+            <context>XML-schema for the attributes added by SIP</context>
+            <note>
+                <p xmlns="http://www.w3.org/1999/xhtml">An extension schema with the added attributes for use in this profile.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">The schema is used with a namespace prefix of sip.</p>
+            </note>
+    </external_schema>
+    <external_schema>
+        <name>E-ARK CSIP METS Extension</name>
+        <URL>http://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd</URL>
+        <context>XML-schema for the attributes added by CSIP</context>
+        <note>
+            <p xmlns="http://www.w3.org/1999/xhtml">An extension schema with the added attributes for use in this profile.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">The schema is identified using the namespace prefix csip.</p>
+        </note>
+    </external_schema>
+    <description_rules>
+        <p xmlns="http://www.w3.org/1999/xhtml">The filepath must be decoded consistently throughout all file references within the information package.</p>
+    </description_rules>
+    <controlled_vocabularies>
+        <vocabulary ID="VocabularyaltrecordIDTYPE">
+            <name>Alternative record ID's</name>
+            <maintenance_agency>DILCIS Board</maintenance_agency>
+            <URI>http://earksip.dilcis.eu/schema/SIPVocabularyRecordIDType.xml</URI>
+            <context>Used in `altrecordID/@TYPE`</context>
+            <description>
+                <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of the alternative record ID.</p>
+            </description>
+        </vocabulary>
+        <vocabulary ID="VocabularyNoteType">
+            <name>Note type</name>
+            <maintenance_agency>DILCIS Board</maintenance_agency>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyNoteType.xml</URI>
+            <context>Used in `@csip:NOTETYPE`</context>
+            <description>
+                <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of a note for an agent.</p>
+            </description>
+        </vocabulary>
+        <vocabulary ID="VocabularyContentInformationTypeSpecification">
+            <name>Content information type specification</name>
+            <maintenance_agency>DILCIS Board</maintenance_agency>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyContentInformationType.xml</URI>
+            <context>Values for `@csip:CONTENTINFORMATIONTYPE`</context>
+            <description>
+                <p xmlns="http://www.w3.org/1999/xhtml">Lists the names of specific E-ARK content information type specifications supported or maintained in this METS profile.</p>
+            </description>
+        </vocabulary>
+        <vocabulary ID="VocabularyContentCategory">
+            <name>Content Category</name>
+            <maintenance_agency>DILCIS Board</maintenance_agency>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyContentCategory.xml</URI>
+            <context>Values for `mets/@type`</context>
+            <description>
+                <p xmlns="http://www.w3.org/1999/xhtml">Declares the categorical classification of package content.</p>
+            </description>
+        </vocabulary>
+        <vocabulary ID="VocabularyFileGrpAndStructMapDivisionLabel">
+            <name>File group names</name>
+            <maintenance_agency>DILCIS Board</maintenance_agency>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyFileGrpAndStructMapDivisionLabel.xml</URI>
+            <context>Values for `fileGrp/@USE`</context>
+            <description>
+                <p xmlns="http://www.w3.org/1999/xhtml">Describes the uses of the file group `&lt;fileGrp&gt;` that are supported by the profile.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Own names should be placed in an own extending vocabulary.</p>
+            </description>
+        </vocabulary>
+        <vocabulary ID="VocabularyISO639-2">
+            <name>ISO language codes</name>
+            <maintenance_agency>International Standard Organization</maintenance_agency>
+            <URI>http://www.iso.ch/</URI>
+            <context>Languages codes used in documetns using the Simple DC XML Schema</context>
+            <description>
+                <p xmlns="http://www.w3.org/1999/xhtml">All information recorded within the portion of a conforming METS document defined using the Simple DC XML Schema must be employ ISO 639-2 language codes within the 'language' element.</p>
+            </description>
+        </vocabulary>
+        <vocabulary ID="VocabularyStatus">
+            <name>dmdSec status</name>
+            <maintenance_agency>DILCIS Board</maintenance_agency>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyStatus.xml</URI>
+            <context>Values for `dmdSec/@STATUS`</context>
+            <description>
+                <p xmlns="http://www.w3.org/1999/xhtml">Describes the status of the descriptive metadata section (dmdSec) which is supported by the profile.</p>
+            </description>
+        </vocabulary>
+        <vocabulary ID="VocabularyIANAmediaTypes">
+            <name>IANA media types</name>
+            <maintenance_agency>IANAs</maintenance_agency>
+            <URI>https://www.iana.org/assignments/media-types/media-types.xhtml</URI>
+            <context>Values for `@MIMETYPE`</context>
+            <description>
+                <p xmlns="http://www.w3.org/1999/xhtml">Valid values for the mime types of referenced files.</p>
+            </description>
+        </vocabulary>
+        <vocabulary ID="VocabularyStructMapType">
+            <name>Structural map typing</name>
+            <maintenance_agency>DILCIS Board</maintenance_agency>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapType.xml</URI>
+            <context>Values for `structMap/@TYPE`</context>
+            <description>
+                <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of the structural map `&lt;structMap&gt;` that is supported by the profile.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Own types should be placed in an own extending vocabulary.</p>
+            </description>
+        </vocabulary>
+        <vocabulary ID="VocabularyStructMapLabel">
+            <name>Structural map label</name>
+            <maintenance_agency>DILCIS Board</maintenance_agency>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapLabel.xml</URI>
+            <context>Values for `structMap/@LABEL`</context>
+            <description>
+                <p xmlns="http://www.w3.org/1999/xhtml">Describes the label of the structural map that is supported by the profile.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Own labels should be placed in an own extending vocabulary.</p>
+            </description>
+        </vocabulary>
+    </controlled_vocabularies>
+    <structural_requirements>
+        <metsRootElement ID="metsRootElement">
+             <requirement ID="GEO_8" REQLEVEL="MUST" RELATEDMAT="VocabularyContentCategory" EXAMPLES="metsRootElementExample1">
+                <description>
+                    <head>Content Category</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The `mets/@TYPE` attribute is set to the value "Geospatial Data".</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>mets/@TYPE</dd>
+                        <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>REF:CSIPv2.0.4</dt><dd>https://earkcsip.dilcis.eu/#CSIP2</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_9" REQLEVEL="MUST" RELATEDMAT="VocabularyContentInformationTypeSpecification" EXAMPLES="metsRootElementExample1">
+                <description>
+                    <head>Content Information Type Specification</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The `mets/@csip:CONTENTINFORMATIONTYPE` attribute is set to the value "citsgeospatial_v3_0".</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>mets/@csip:CONTENTINFORMATIONTYPE</dd>
+                        <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>REF:CSIPv2.0.4</dt><dd>https://earkcsip.dilcis.eu/#CSIP4</dd>
+                    </dl>
+                </description>
+            </requirement>
+			           <requirement ID="GEO_10" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1">
+                <description>
+                    <head>METS Profile</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The value is set to "https://citsgeospatial.dilcis.eu/profile/E-ARK-GEOSPATIAL-REPRESENTATION.xml".</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>mets/@PROFILE</dd>
+                        <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>REF:CSIPv2.0.4</dt><dd>https://earkcsip.dilcis.eu/#SIP6</dd>
+                        <dt>REF:SIPv2.0.4</dt><dd>https://earksip.dilcis.eu/#SIP2</dd>
+                    </dl>
+                </description>
+            </requirement>
+        </metsRootElement>
+        <metsHdr ID="metsHeaderElement">
+            <requirement ID="REF_CSIP_1" REQLEVEL="MUST">
+                <description>
+                    <head>METS header</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The Geospatial root METS document metsHdr element should comply with <a href="https://earkcsip.dilcis.eu/#useofthemetsheaderelementmetshdr"> metsHdr requirements in the CSIP profile.</a></p>
+                </description>
+            </requirement>
+            <requirement ID="REF_SIP_1" REQLEVEL="MUST">
+                <description>
+                    <head>METS header</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The Geospatial root METS document metsHdr element should comply with <a href="https://earksip.dilcis.eu/#extendeduseofthemetsheaderelement%60metshdr%60"> metsHdr requirements in the SIP profile.</a></p>
+                </description>
+            </requirement>
+        </metsHdr>
+        <dmdSec ID="dmdSecElement">
+            <requirement ID="REF_CSIP_2" REQLEVEL="SHOULD">
+                <description>
+                    <head>Descriptive metadata</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The Geospatial root METS document dmdSecr element should comply with <a href="https://earkcsip.dilcis.eu/#useofthemetsdescriptivemetadatasectionelementdmdsec"> dmdSec requirements in the CSIP profile.</a></p>
+                </description>
+            </requirement>
+            <requirement ID="REF_SIP_2" REQLEVEL="SHOULD">
+                <description>
+                    <head>Descriptive metadata</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The Geospatial root METS document dmdSec element should comply with <a href="https://earksip.dilcis.eu/#extendeduseofthemetsdescriptivemetadatasectionelement%60dmdsec%60"> dmdSec requirements in the SIP profile.</a></p>
+                </description>
+            </requirement>
+        </dmdSec>
+        <amdSec ID="amdSecElement">
+            <requirement ID="REF_CSIP_3" REQLEVEL="SHOULD">
+                <description>
+                    <head>Administrative metadata</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The Geospatial root METS document amdSec element should comply with <a href="http://earkcsip.dilcis.eu/#534-use-of-the-mets-administrative-metadata-section-element-amdsec"> amdSec requirements in the CSIP profile.</a></p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">In Geospatial it is required that any rights or digital provenance metadata that is general to the package can be held within the root metadata folder and that any rights or digital provenance metadata that is specific to the data held in the representation should be held in the representation metadata folder.</p>
+                </description>
+            </requirement>
+            <requirement ID="REF_SIP_3" REQLEVEL="SHOULD">
+                <description>
+                    <head>Administrative metadata</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The eHEALTH1 root METS document amdSec element should comply with <a href="https://earksip.dilcis.eu/#extendeduseofmetsadministrativemetadatasectionelement%60amdsec%60"> amdSec requirements in the CSIP profile.</a></p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">In eHEALTH1 it is required that any rights or digital provenance metadata that is general to the package can be held within the root metadata folder and that any rights or digital provenance metadata that is specific to the data held in the representation should be held in the representation metadata folder.</p>
+                </description>
+            </requirement>
+        </amdSec>
+          <structLink ID="structLinkElement">
+           <requirement REQLEVEL="MAY" ID="REF_METS_1">
+               <description>
+                   <head>structLink</head>
+                   <p xmlns="http://www.w3.org/1999/xhtml">Section not defined or used in CSIP, additional own uses may occur.</p>
+                   <p xmlns="http://www.w3.org/1999/xhtml">Information regarding the structural links is found in the <a href="http://www.loc.gov/standards/mets/METSPrimer.pdf">METS Primer</a></p>
+               </description>
+           </requirement>
+         </structLink>
+        <behaviorSec ID="behaviorSecElement">
+          <requirement REQLEVEL="MAY" ID="REF_METS_2">
+              <description>
+                  <head>behaviorSec</head>
+                  <p xmlns="http://www.w3.org/1999/xhtml">Section not defined or used in CSIP, additional own uses may occur.</p>
+                  <p xmlns="http://www.w3.org/1999/xhtml">Information regarding the behavior section is found in the <a href="http://www.loc.gov/standards/mets/METSPrimer.pdf">METS Primer</a></p>
+            </description>
+          </requirement>
+        </behaviorSec>
+    </structural_requirements>
+    <technical_requirements>
+        <content_files>
+            <requirement ID="GEO_11" REQLEVEL="SHOULD">
+                <description>
+                    <head>Minimum one file in a geospatial format</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If the value in mets/@csip: CONTENTINFORMATIONTYPE is "citsgeospatial_v3_0", then there SHOULD exist at least one file in a geospatial format in representations/[RepresentationName]/data</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_12" REQLEVEL="MAY">
+                <description>
+                    <head>Subfolders in data representations/[RepresentationName]/data</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If there are more geospatial records in a representation, each geospatial file MAY be placed or grouped in subfolders in representations/[RepresentationName]/data</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_15" REQLEVEL="MUST" RELATEDMAT="GEO_11">
+                <description>
+                    <head>CRS definition</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Every geospatial dataset MUST be accompanied with information about its underlying Coordinate Reference System (CRS) in one of two ways:</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">* Full description of the CRS together with the archived data (within the geospatial file itself or in an accompanying file)</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">* The geospatial file contains a reference to a CRS registry</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>Conditional 1..1</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_16" REQLEVEL="SHOULD">
+                <description>
+                    <head>Geographic location validation</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The geographies in the geospatial records SHOULD be located within a fixed bounding box defined in the submission agreement between the producer and the archive according to the expected location and extent of the dataset</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..1</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_18" REQLEVEL="MUST">
+                <description>
+                    <head>Valid geospatial vector file</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Any geospatial vector datafile in representations/[RepresentationName]/data MUST be a valid vector file compliant with its respective format requirements (must pass the validation with the chosen validator for its format)</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>1..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_19" REQLEVEL="MUST">
+                <description>
+                    <head>Vector feature attribute</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Each Vector Feature dataset MUST contain at least one Feature attribute unique to each feature instance</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>1..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_20" REQLEVEL="SHOULD">
+                <description>
+                    <head>Long-Term preservation format Profile for Geospatial Vector data</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Geospatial vector data in a long-term preservation representation SHOULD comply with the requirements for the respective Long-Term preservation format Profile for Geospatial Vector data</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_21" REQLEVEL="MUST">
+                <description>
+                    <head>Valid raster file</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Any raster file in representations/[RepresentationName]/data MUST be a valid raster file compliant with its respective format requirements (must pass the validation with the chosen validator for its format).</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>1..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_22" REQLEVEL="SHOULD">
+                <description>
+                    <head>Long-Term preservation format Profile for Geospatial Raster data</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Raster data in the long-term preservation representation SHOULD comply with the requirements for the respective Long-Term preservation format Profile for Geospatial Raster data</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_23" REQLEVEL="MAY">
+                <description>
+                    <head>Raster tiling index file</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If raster objects are organised using an external tiling index file, this tiling index MAY be placed in representations/[RepresentationName]/data</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_25" REQLEVEL="SHOULD">
+                <description>
+                    <head>Representation level documentation</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Technical documentation specific to one representation SHOULD be placed in representations/[RepresentationName]/documentation</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Note tht any documentation pertaining to all representations in the Information package SHOULD be placed in /documentation on package level</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_27" REQLEVEL="SHOULD">
+                <description>
+                    <head>Standardised machine-readable Feature Catalogue</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A standardised machine-readable feature catalogue SHOULD be provided in the Information Package</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                        <dt>REF:ISO19110</dt><dd>https://www.iso.org/standard/57303.html</dd>
+                        <dt>REF:ISO19115-3</dt><dd>https://www.iso.org/standard/32579.html</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_27a" REQLEVEL="SHOULD" RELATEDMAT="GEO_27">
+                <description>
+                    <head>Placement of Standardised machine-readable Feature Catalogue</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If a standardised machine-readable feature catalogue exits it SHOULD be placed in representations/[RepresentationName]/documentation/structure</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_29b" REQLEVEL="SHOULD" RELATEDMAT="GEO_29">
+                <description>
+                    <head>Placement of machine-readable logical model</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If a standardised machine-readable version of a document describing the logical model exists it SHOULD be provided in representations/[RepresentationName]/documentation/structure</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_33" REQLEVEL="MAY">
+                <description>
+                    <head>Rendering configuration</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A standardised machine-readable rendering configuration for one or more geospatial datasets MAY be provided in the Information Package</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_33a" REQLEVEL="SHOULD" RELATEDMAT="GEO_33">
+                <description>
+                    <head>Placement of rendering configuration</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If a standardised machine-readable rendering configuration for one or more geospatial datasets exists it SHOULD be provided in representations/[RepresentationName]/documentation/rendering</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_37" REQLEVEL="MAY">
+                <description>
+                    <head>Common queries, algorithms machine-readable</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Code of queries and algorithms used with the geospatial records in the Information Package MAY be provided in the Information Package</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_37a" REQLEVEL="SHOULD" RELATEDMAT="GEO_37">
+                <description>
+                    <head>Placement of machine-readable common queries, algorithms</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If code of queries and algorithms used with the geospatial records exists it SHOULD be provided in a documentation/behaviour folder</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            <requirement ID="GEO_38" REQLEVEL="SHOULD" RELATEDMAT="GEO_15">
+                <description>
+                    <head>Standardised machine-readable format CRS definition</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If the CRS definition in a geospatial file is documented only by a reference to a CRS registry a standardised machine-readable format CRS definition compliant with standards for CRS definition SHOULD be provided in the Information Package</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            </requirement><requirement ID="GEO_38a" REQLEVEL="SHOULD" RELATEDMAT="GEO_38">
+                <description>
+                    <head>Placement of standardised machine-readable format CRS definition</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If a standardised machine-readable format CRS definition exists it SHOULD be provided in a documentation/CRS folder</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+          
+            <requirement ID="GEO_41" REQLEVEL="SHOULD">
+                <description>
+                    <head>Representation level contextual documentation</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Contextual documentation covering only content within a particular representation SHOULD be placed in representations/[RepresentationName]/documentation/other</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_42" REQLEVEL="SHOULD" RELATEDMAT="GEO_17">
+                <description>
+                    <head>Standardised machine-readable geospatial metadata</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Descriptive geospatial metadata in the long-term preservation format representation of the Information Package  SHOULD be provided in the form of standardized machine-readable format compliant with geospatial metadata standards</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="GEO_42a" REQLEVEL="MUST" RELATEDMAT="GEO_42">
+                <description>
+                    <head>Placement of standardised machine-readable geospatial metadata</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If a standardised descriptive geospatial metadata file exists it MUST be provided in representations/[RepresentationName]/metadata/descriptive</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>Conditional 1..n</dd>
+                    </dl>
+                </description>
+            </requirement>     
+            <requirement ID="GEO_43" REQLEVEL="MAY" RELATEDMAT="GEO_17">
+                <description>
+                    <head>Non-standardised machine-readable Geospatial metadata</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A copy of Geospatial metadata in non-long-term preservation representations MAY be stored in its original form as databases or documentation. However, , if this data is stored in a long-term preservation representation, the formats need to comply with the archival guidelines (stored in approved long-term preservation formats).</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+        </content_files>        
+        <behavior_files>
+            <requirement>
+                <description>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Requirements not stated in CITS Geospatial</p>
+                </description>
+            </requirement>
+        </behavior_files>
+        <metadata_files>
+            <requirement>
+                <description>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Requirements not stated in CITS Geospatial</p>
+                </description>
+            </requirement>
+        </metadata_files>
+    </technical_requirements>
+    <tool>
+        <name>No tools exist that currently support this profile</name>
+    </tool>
+    <Example ID="metsRootElementExample1" LABEL="METS example of representation METS element for an IP following the CITS Geospatial">
+        <mets:mets 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:mets="http://www.loc.gov/METS/"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
+            OBJID= "geospatial-root-mets-example" 
+            TYPE= "Geospatial Data" 
+            csip:CONTENTINFORMATIONTYPE="citsgeospatial_v3_0"
+            PROFILE="https://citsgeospatial.dilcis.eu/profile/E-ARK-GEOSPATIAL-REPRESENTATION.xml" 
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd
+            http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd
+            https://DILCIS.eu/XML/METS/CSIPExtensionMETS 
+            https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd 
+            https://DILCIS.eu/XML/METS/SIPExtensionMETS 
+            https://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd">
+        </mets:mets>
+    </Example>     
+    <Example ID="fileSecExample1" LABEL="METS representation example for Geospatial with file information together with the info from CS IP.">
+        <mets:fileSec ID="filesec-docx-file-1">
+            <mets:fileGrp ID="filegrp-representation" USE="Representations" csip:CONTENTINFORMATIONTYPE="citsgeospatial_v3_0">
+                <mets:file ID="file-ptr-representation-mets" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:33:23.617+01:00" CHECKSUM="B1CF59678A21C2805370536AB1097735D7E9F3FDDDCAE3757426ED85F6350A48" CHECKSUMTYPE="SHA-256">
+                    <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/originalformat/mets.xml"/>                        
+                </mets:file>
+            </mets:fileGrp>
+        </mets:fileSec>
+    </Example>
+    <Example ID="structMapExample1" LABEL="METS root example of the mandatory structural map including representations for Geospatial">
+        <mets:structMap ID="struct-map-example-1" TYPE="PHYSICAL" LABEL="CSIP">
+            <mets:div ID="struct-map-example-div" LABEL="csip-mets-example">
+                <mets:div ID="struct-map-metadata-div" LABEL="Metadata" ADMID="digiprov-premis-file-1 digiprov-premis-file-2 digiprov-premis-file-3 digiprov-premis-file-4" DMDID="dmd-ead-file">
+                </mets:div>
+                <mets:div ID="struct-map-schema-div" LABEL="Schemas">
+                    <mets:fptr FILEID="file-ptr-schema">
+                    </mets:fptr>
+                </mets:div>
+                <mets:div ID="struct-map-reps-preing-div" LABEL="Representations/originalformat">
+                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/originalformat/METS.xml" xlink:title="file-grp-rep-ori">
+                    </mets:mptr>
+                </mets:div>
+                <mets:div ID="struct-map-reps-sub-div" LABEL="Representations/preservationformat">
+                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preservationformat/METS.xml" xlink:title="file-grp-rep-pf">
+                    </mets:mptr>
+                </mets:div>
+                <mets:div ID="struct-map-reps-ing-div" LABEL="Representations/disseminationformat">
+                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/disseminationformat/METS.xml" xlink:title="file-grp-rep-df">
+                    </mets:mptr>
+                </mets:div>
+            </mets:div>
+        </mets:structMap>        
+    </Example>
+    <Appendix NUMBER="1" LABEL="Example of a whole METS document describing an representation following CITS Geospatial.">
+        <mets:mets  
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:mets="http://www.loc.gov/METS/"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
+            OBJID= "geospatial-root-mets-example" 
+            TYPE= "Geospatial Data" 
+            csip:CONTENTINFORMATIONTYPE="citsgeospatial_v3_0"
+            PROFILE="https://citsgeospatial.dilcis.eu/profile/E-ARK-GEOSPATIAL-REPRESENTATION.xml" 
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd
+            http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd
+            https://DILCIS.eu/XML/METS/CSIPExtensionMETS 
+            https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd 
+            https://DILCIS.eu/XML/METS/SIPExtensionMETS 
+            https://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd">
+            <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" 
+                LASTMODDATE="2018-04-24T14:37:49.602+01:00" 
+                RECORDSTATUS="NEW" 
+                csip:OAISPACKAGETYPE="SIP">                
+                <mets:agent ROLE="CREATOR" TYPE="ORGANIZATION">
+                    <mets:name>Creator</mets:name>
+                    <mets:note csip:NOTETYPE="IDENTIFICATIONCODE">ID</mets:note>
+                </mets:agent>
+                <mets:agent ROLE="OTHER" TYPE="INDIVIDUAL" OTHERROLE="SUBMITTER">
+                    <mets:name>Creata Creator</mets:name>
+                    <mets:note>Phone: 08-123456, Email: creata.creator@mail.mail</mets:note>
+                </mets:agent>            
+                <mets:agent ROLE="ARCHIVIST" TYPE="ORGANIZATION">
+                    <mets:name>The Archives</mets:name>
+                    <mets:note csip:NOTETYPE="IDENTIFICATIONCODE">ID</mets:note>
+                </mets:agent>   
+                <mets:agent ROLE="PRESERVATION" TYPE="ORGANIZATION">
+                    <mets:name>The Archives</mets:name>
+                    <mets:note csip:NOTETYPE="IDENTIFICATIONCODE">ID</mets:note>
+                </mets:agent>
+                <mets:altRecordID TYPE="SUBMISSIONAGREEMENT">http://submissionagreement.se/dnr331-1144-2011/20120711/</mets:altRecordID>
+            </mets:metsHdr>
+            <mets:dmdSec ID="dmd1-geospatial" CREATED="2018-04-24T15:27:45.702+01:00" STATUS="CURRENT">
+                <mets:mdRef 
+                    LOCTYPE="URL"
+                    xlink:type="simple"
+                    xlink:href="metadata/descriptive/ead.xml"
+                    MDTYPE="EAD"
+                    MIMETYPE="application/xml" 
+                    SIZE="758"
+                    CREATED="2018-04-24T14:37:49.609+01:00" 
+                    CHECKSUM="31C54EC8D5632B262A62CC3D691A8A6A3DD647670865BE8596D2A7F62DBBC6AB"
+                    CHECKSUMTYPE="SHA-256"/>
+            </mets:dmdSec>
+            <mets:amdSec>
+                <mets:digiprovMD ID="appdx1.digiprov-premis-file-1" CREATED="2018-04-24T14:37:52.783+01:00">
+                    <mets:mdRef
+                        LOCTYPE="URL"
+                        xlink:type="simple"
+                        xlink:href="metadata/preservation/premis1.xml"
+                        MDTYPE="PREMIS"
+                        MDTYPEVERSION="3.0"
+                        MIMETYPE="text/xml"
+                        SIZE="1211"
+                        CREATED="2018-04-24T14:37:52.783+01:00"
+                        CHECKSUM="8aa278038dbad54bbf142e7d72b493e2598a94946ea1304dc82a79c6b4bac3d5"
+                        CHECKSUMTYPE="SHA-256"
+                        LABEL="premis1.xml"/>
+                </mets:digiprovMD>
+                <mets:digiprovMD ID="appdx1.digiprov-premis-file-2" CREATED="2018-04-24T14:47:52.783+01:00">
+                    <mets:mdRef
+                        LOCTYPE="URL"
+                        xlink:type="simple"
+                        xlink:href="metadata/preservation/premis2.xml"
+                        MDTYPE="PREMIS"
+                        MDTYPEVERSION="3.0"
+                        MIMETYPE="text/xml"
+                        SIZE="2854"
+                        CREATED="2018-04-24T14:37:52.783+01:00"
+                        CHECKSUM="d1dfa585dcc9d87268069dc58d5e47956434ec3db4087a75a3885d287f15126f"
+                        CHECKSUMTYPE="SHA-256"
+                        LABEL="premis2.xml"/>
+                </mets:digiprovMD>
+                <mets:digiprovMD ID="appdx1.digiprov-premis-file-3" CREATED="2018-04-24T14:37:52.783+01:00">
+                    <mets:mdRef
+                        LOCTYPE="URL"
+                        xlink:type="simple"
+                        xlink:href="metadata/preservation/premis3.xml"
+                        MDTYPE="PREMIS"
+                        MDTYPEVERSION="3.0"
+                        MIMETYPE="text/xml"
+                        SIZE="1211"
+                        CREATED="2018-04-24T14:37:52.783+01:00"
+                        CHECKSUM="8aa278038dbad54bbf142e7d72b493e2598a94946ea1304dc82a79c6b4bac3d5"
+                        CHECKSUMTYPE="SHA-256"
+                        LABEL="premis3.xml"/>
+                </mets:digiprovMD>
+                <mets:digiprovMD ID="appdx1.digiprov-premis-file-4" CREATED="2018-04-24T14:47:52.783+01:00">
+                    <mets:mdRef
+                        LOCTYPE="URL"
+                        xlink:type="simple"
+                        xlink:href="metadata/preservation/premis4.xml"
+                        MDTYPE="PREMIS"
+                        MDTYPEVERSION="3.0"
+                        MIMETYPE="text/xml"
+                        SIZE="2854"
+                        CREATED="2018-04-24T14:37:52.783+01:00"
+                        CHECKSUM="d1dfa585dcc9d87268069dc58d5e47956434ec3db4087a75a3885d287f15126f"
+                        CHECKSUMTYPE="SHA-256"
+                        LABEL="premis4.xml"/>
+                </mets:digiprovMD>
+                <mets:digiprovMD ID="appdx1.digiprov-premis-file-5" CREATED="2018-04-24T14:37:52.783+01:00">
+                    <mets:mdRef
+                        LOCTYPE="URL"
+                        xlink:type="simple"
+                        xlink:href="metadata/preservation/premis5.xml"
+                        MDTYPE="PREMIS"
+                        MDTYPEVERSION="3.0"
+                        MIMETYPE="text/xml"
+                        SIZE="1211"
+                        CREATED="2018-04-24T14:37:52.783+01:00"
+                        CHECKSUM="8aa278038dbad54bbf142e7d72b493e2598a94946ea1304dc82a79c6b4bac3d5"
+                        CHECKSUMTYPE="SHA-256"
+                        LABEL="premis5.xml"/>
+                </mets:digiprovMD>
+                <mets:digiprovMD ID="appdx1.digiprov-premis-file-6" CREATED="2018-04-24T14:47:52.783+01:00">
+                    <mets:mdRef
+                        LOCTYPE="URL"
+                        xlink:type="simple"
+                        xlink:href="metadata/preservation/premis6.xml"
+                        MDTYPE="PREMIS"
+                        MDTYPEVERSION="3.0"
+                        MIMETYPE="text/xml"
+                        SIZE="2854"
+                        CREATED="2018-04-24T14:37:52.783+01:00"
+                        CHECKSUM="d1dfa585dcc9d87268069dc58d5e47956434ec3db4087a75a3885d287f15126f"
+                        CHECKSUMTYPE="SHA-256"
+                        LABEL="premis6.xml"/>
+                </mets:digiprovMD>
+            </mets:amdSec>
+            <mets:fileSec ID="filesec-docx-file-1">
+                <mets:fileGrp ID="filegrp-documentation" USE="Documentation">
+                    <mets:file ID="file-ptr-documentation-file1" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2352367" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="D2DF16632617402BF279D61DBC9F73675E033ABA6B94A78D4B9607CE5CAAFA3E" CHECKSUMTYPE="SHA-256">
+                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File.docx"/>                    	
+                    </mets:file>
+                    <mets:file ID="file-ptr-documentation-file2" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="1344782" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="FD7EE6C02AC30570BA8C73E0E8CCDDA77C5428F3E6F6BEA7834F9B1AEB4D8F20" CHECKSUMTYPE="SHA-256">
+                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File2.docx"/>                    
+                    </mets:file>
+                </mets:fileGrp>
+                <mets:fileGrp ID="filegrp-representation" USE="/data/" csip:CONTENTINFORMATIONTYPE="citsgeospatial_v3_0">
+                    <mets:file ID="file-ptr-representation-file1" MIMETYPE="PDF" SIZE="2314264" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="9EC53E81CDEC19FA665BDDB30ECE11067EF536F3599C67713DCE0FF2FCD81CC7" CHECKSUMTYPE="SHA-256" ADMID="appdx1.digiprov-premis-file-1 appdx1.digiprov-premis-file-2">
+                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="/data/geo1.pdf"/>                        
+                    </mets:file>
+                    <mets:file ID="file-ptr-representation-file2" MIMETYPE="PDF" SIZE="1385742" CREATED="2018-04-24T15:27:39.617+01:00" CHECKSUM="0EA28B91A3B36D1D90E598301E6F1556B073BAE7DA9C2F242D93D2091D10D426" CHECKSUMTYPE="SHA-256" ADMID="appdx1.digiprov-premis-file-3 appdx1.digiprov-premis-file-4">
+                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="/data/geo2.pdf"/>                        
+                    </mets:file>
+                    <mets:file ID="file-ptr-representation-file3" MIMETYPE="PDF" SIZE="1341744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="8FE5B1B292B0CD7741C2CD33221AAA80B6B4EB576D129A2CB5C16D7101CB1C1C" CHECKSUMTYPE="SHA-256" ADMID="appdx1.digiprov-premis-file-5 appdx1.digiprov-premis-file-6">
+                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="/data/geo3.pdf"/>                        
+                    </mets:file>
+                </mets:fileGrp>
+            </mets:fileSec>
+            <mets:structMap ID="struct-map-example-1" TYPE="PHYSICAL" LABEL="CSIP">
+                <mets:div ID="struct-map-example-div" LABEL="csip-mets-example">
+                    <mets:div ID="struct-map-metadata-div" LABEL="Metadata" ADMID="appdx1.digiprov-premis-file-1 appdx1.digiprov-premis-file-2 appdx1.digiprov-premis-file-3 appdx1.digiprov-premis-file-4 appdx1.digiprov-premis-file-5 appdx1.digiprov-premis-file-6" DMDID="dmd1-geospatial"/>
+                    <mets:div ID="struct-map-doc-div" LABEL="Documentation">
+                        <mets:fptr FILEID="filegrp-documentation"/>
+                    </mets:div>
+                    <mets:div ID="struct-map-reps-sub-div" LABEL="Representations">
+                        <mets:fptr FILEID="filegrp-representation"/>
+                    </mets:div>
+                </mets:div>
+            </mets:structMap>
+        </mets:mets>
+    </Appendix>        
+</METS_Profile>
