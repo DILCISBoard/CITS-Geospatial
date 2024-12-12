@@ -4,13 +4,14 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR" || exit
 
 echo " - Cleaning up site directory and copying spec-publisher site..."
-git clean -f site/ specification/
+git clean -f site/ specification/ doc/ 
 cp -rf spec-publisher/site/* site/
+cp -rf spec-publisher/res/md/figs site/
 
 echo " - Generating main site specification and PDF markdown..."
 
 mvn clean package -f spec-publisher/pom.xml
-java -jar ./spec-publisher/target/mets-profile-processor-0.1.0-SNAPSHOT.jar -f ./specification.yaml -o doc/site profile/E-ARK-GEOSPATIAL-REPRESENTATION.xml profile/E-ARK-GEOSPATIAL-ROOT.xml
+java -jar ./spec-publisher/target/mets-profile-processor-0.2.0-SNAPSHOT.jar -f ./specification.yaml -o doc/site  profile/E-ARK-GEOSPATIAL-ROOT-v3-0-0.xml profile/E-ARK-GEOSPATIAL-REPRESENTATION-v3-0-0.xml
 
 echo " - MARKDOWN-PP: generating site page with TOC..."
 cd doc/site || exit
@@ -27,11 +28,8 @@ markdown-pp SITE.md -o "$SCRIPT_DIR"/site/index.md
 cd "$SCRIPT_DIR" || exit
 
 echo " - copying files to site directory..."
-cp -rf spec-publisher/res/md/figs site/
 # Copy remaining collaterel
-cp -rf profile site/
-cp -rf archived site/archive
-cp -rf specification/media site/
+cp -rf profile archive guideline specification/media site/
 
 if [ -d _site ]
 then
