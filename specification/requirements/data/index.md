@@ -1,4 +1,4 @@
-# Data requirements (Geospatial data)
+## Data requirements (Geospatial data)
 
 This chapter states the requirements for the content data object or objects that form the geospatial record contained in the Information package.
 

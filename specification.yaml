@@ -63,13 +63,13 @@ body:
     type: requirements
     heading: "Table 5: General requirements for the content data object"
     requirements:
-      - GEO_11
-      - GEO_12
       - GEO_13
       - GEO_14
+      - GEO_17
+      - GEO_11
+      - GEO_12
       - GEO_15
       - GEO_16
-      - GEO_17
 
   - name: requirements.data.vector
     type: file

@@ -1,6 +1,6 @@
-# METS Requirements
+## METS Requirements
 
-## Package and Representation METS
+### Package and Representation METS
 
 Generally, CSIP can consist of zero to many representations, and this is an important feature that needs to be considered when packing geodata files within CSIPs.
 
