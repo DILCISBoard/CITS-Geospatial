@@ -6,7 +6,7 @@ kramdown:
 future: true
 jailed: false
 gfm_quirks: paragraph_end
-repository: DILCISBoard/CITS-Geospatial
+repository: DILCISBoard/CITS-GEOSPATIAL
 plugins:
 - jekyll-github-metadata
 - jekyll-redirect-from

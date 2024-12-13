@@ -1,6 +1,6 @@
 ---
-title: E-ARK CITS Geospatial
-subtitle: E-ARK Content Information Type Specification for digital geospatial data records archiving
+title: CITS Geospatial
+subtitle: Content Information Type Specification for Digital Geospatial Data Records Archiving
 abstract: |
         The purpose of this document is to describe the Content Information Type
         Specification for Geospatial records (CITS Geospatial). This
@@ -10,4 +10,3 @@ abstract: |
         records and resources to and from archives.
 version: ${RELEASE_VERSION}
 date: ${RELEASE_DATE}
----
