@@ -1,5 +1,8 @@
 CITS Geospatial
 =============
+
+https://geo.openpreservation.org
+
 ## E-ARK Content Information Type Specification for digital geospatial data records archiving
 The CITS Geospatial version 3.0.0 is an updated version of the specification, defining the approach to preserve all types of digital geospatial records. Key changes in this version include a revised structure of geodata elements and its placement within the eArchiving Information Package. In the work with this update the result includes the conclusion of CITS GIS being a part of CITS Geospatial and thus no CITS GIS is developed.
 
